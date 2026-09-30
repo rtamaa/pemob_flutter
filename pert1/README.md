@@ -1,6 +1,6 @@
 # Praktikum Flutter Fundamental – Pertemuan 1
 
-## Pengenalan Flutter, Instalasi, dan Aplikasi Pertama
+## Pengenalan Flutter, dan Aplikasi Pertama
 
 ### 1. Tujuan Praktikum
 

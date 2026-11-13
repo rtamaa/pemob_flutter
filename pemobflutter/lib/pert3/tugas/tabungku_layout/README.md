@@ -1,139 +1,124 @@
 # TabungKu – Tugas Minggu 3 Pemrograman Mobile
 
-## Deskripsi Proyek
-
-**TabungKu** merupakan aplikasi sederhana berbasis Flutter yang dibuat untuk memenuhi **Tugas Minggu 3 Mata Kuliah T1505 Pemrograman Mobile**. Tugas ini berfokus pada penyusunan tata letak (*layout*) halaman Ringkasan Tabungan menggunakan widget dasar Flutter.
-
-Aplikasi menampilkan informasi nama tabungan, saldo, target tabungan, kategori aktivitas, serta daftar transaksi menggunakan data statis (*hard-coded*).
-
-Tampilan aplikasi menggunakan perpaduan warna **hijau sage dan pink pastel** agar terlihat sederhana, menarik, dan rapi. Layout dirancang agar dapat menyesuaikan ukuran layar HP maupun tablet.
-
 ## Identitas Mahasiswa
 
-| Keterangan | Informasi |
-|---|---|
-| Nama | Septiara Pratama |
-| NIM | 20240801027 |
-| Universitas | Universitas Esa Unggul |
-| Fakultas | Fakultas Ilmu Komputer |
-| Program Studi | Teknik Informatika |
-| Mata Kuliah | T1505 Pemrograman Mobile |
-| Semester | 5 |
-| Tugas | Minggu 3 – Menyusun Layout dengan Widget Dasar Flutter |
+- **Nama:** Septiara Pratama
+- **NIM:** 20240801027
+- **Program Studi:** Teknik Informatika
+- **Universitas:** Universitas Esa Unggul
+- **Mata Kuliah:** Pemrograman Mobile
+- **Tugas:** Minggu 3 – Menyusun Layout dengan Widget Dasar Flutter
 
-## Fitur Tampilan
+## Deskripsi Aplikasi
 
-1. **Ringkasan Tabungan** – Menampilkan nama tabungan, saldo saat ini, target tabungan, serta indikator progres pencapaian target.
-2. **Kategori Aktivitas** – Menampilkan tiga kategori, yaitu Menabung, Tarik, dan Riwayat, menggunakan Card yang terpisah.
-3. **Transaksi Terakhir** – Menampilkan tiga transaksi beserta judul, tanggal, dan nominal menggunakan data statis.
-4. **Layout Responsif** – Menggunakan pengaturan lebar konten agar tampilan dapat menyesuaikan layar HP dan tablet.
-5. **Tema Warna Pastel** – Menggunakan kombinasi warna hijau sage, pink pastel, dan putih.
+TabungKu merupakan aplikasi sederhana berbasis Flutter yang dibuat untuk menampilkan ringkasan tabungan secara statis. Aplikasi ini menampilkan nama tabungan, saldo saat ini, target tabungan, progres tabungan, kategori aktivitas, dan riwayat transaksi.
 
-> **Catatan:** Aplikasi masih berfokus pada tampilan antarmuka. Data transaksi bersifat statis dan kategori aktivitas belum memiliki fungsi interaktif.
+Pembuatan aplikasi ini bertujuan untuk mempraktikkan penggunaan widget dasar Flutter dalam menyusun tampilan yang rapi, terstruktur, dan responsif pada layar HP maupun tablet.
+
+## Fitur Aplikasi
+
+1. **Ringkasan Tabungan**  
+   Menampilkan informasi Tabungan Laptop dengan saldo Rp 3.500.000 dan target Rp 7.000.000.
+
+2. **Progres Tabungan**  
+   Menggunakan `LinearProgressIndicator` untuk menunjukkan progres tabungan sebesar 50%.
+
+3. **Kategori Aktivitas**  
+   Menampilkan tiga Card terpisah, yaitu Menabung, Tarik, dan Riwayat, yang dilengkapi ikon dan warna pastel.
+
+4. **Transaksi Terakhir**  
+   Menampilkan tiga transaksi dalam Card terpisah, yaitu:
+    - Menabung Bulanan: + Rp 500.000
+    - Uang Saku: + Rp 200.000
+    - Penarikan: - Rp 100.000
+
+5. **Tampilan Responsif**  
+   Tampilan HP dan tablet menggunakan susunan satu kolom yang sama. Lebar konten dibatasi agar tetap proporsional, sedangkan ukuran Card, jarak, dan padding menyesuaikan tinggi layar tablet. Halaman menggunakan `ListView` agar seluruh bagian dapat diakses dengan scrolling apabila diperlukan.
 
 ## Widget Flutter yang Digunakan
 
 | Widget | Fungsi |
 |---|---|
-| `MaterialApp` | Mengatur konfigurasi utama aplikasi dan tema. |
-| `Scaffold` | Membuat struktur dasar halaman aplikasi. |
+| `MaterialApp` | Mengatur aplikasi dan tema utama. |
+| `Scaffold` | Menyusun kerangka halaman aplikasi. |
 | `AppBar` | Menampilkan judul Ringkasan Tabungan. |
-| `Card` | Menampilkan informasi tabungan dan kategori aktivitas. |
-| `Column` | Menyusun elemen secara vertikal. |
-| `Row` | Menyusun elemen secara horizontal. |
-| `Container` | Mengatur tampilan dan batas lebar konten. |
-| `Padding` | Memberikan jarak di dalam widget. |
-| `SizedBox` | Mengatur jarak antarelemen. |
-| `Text` dan `Icon` | Menampilkan informasi dan ikon. |
-| `Expanded` dan `Flexible` | Menyesuaikan pembagian ruang pada layout. |
-| `ListView` | Menyusun isi halaman secara vertikal dan memungkinkan halaman digulir. |
-| `Divider` | Memberikan garis pemisah antarelemen. |
-| `LinearProgressIndicator` | Menampilkan persentase pencapaian target tabungan. |
+| `Column` | Menyusun komponen secara vertikal. |
+| `Row` | Menyusun komponen secara horizontal. |
+| `Card` | Menampilkan informasi tabungan, kategori, dan transaksi dalam kartu terpisah. |
+| `Container` | Mengatur latar dan dekorasi ikon transaksi. |
+| `Padding` | Memberikan jarak di dalam komponen. |
+| `SizedBox` | Mengatur jarak antarwidget. |
+| `Expanded` | Membagi ruang pada susunan horizontal. |
+| `Flexible` | Membantu teks nominal menyesuaikan ruang. |
+| `ListView` | Membuat halaman dapat digulir. |
+| `LayoutBuilder` | Menyesuaikan layout berdasarkan ukuran layar yang tersedia. |
+| `ConstrainedBox` | Membatasi lebar maksimal konten pada HP dan tablet. |
+| `Divider` | Memberikan pemisah pada informasi dalam Card tabungan. |
+| `LinearProgressIndicator` | Menampilkan progres tabungan sebesar 50%. |
 | `ClipRRect` | Membuat sudut indikator progres menjadi melengkung. |
 
-Seluruh widget yang digunakan merupakan widget bawaan Flutter tanpa menggunakan package pihak ketiga.
+## Responsivitas Tampilan
 
-## Teknologi yang Digunakan
+Aplikasi dirancang agar dapat digunakan pada HP dan tablet dengan tampilan yang konsisten.
 
-- **Framework:** Flutter
-- **Bahasa Pemrograman:** Dart
-- **IDE:** Android Studio
-- **Desain Antarmuka:** Material Design
-- **Pengujian:** Android Emulator (HP dan Tablet)
-- **Version Control:** Git dan GitHub
+Pada **HP**, komponen disusun secara vertikal dengan lebar konten maksimal 500 logical pixels dan padding yang sesuai dengan ukuran layar.
+
+Pada **tablet**, susunan tetap satu kolom dengan lebar maksimal 700 logical pixels. Ketika tinggi area tampilan kurang dari 700 logical pixels, Card dan jarak antarbagian dibuat lebih ringkas agar penggunaan ruang lebih efisien.
+
+Penggunaan `ListView` memungkinkan pengguna menggulir halaman untuk melihat seluruh informasi tanpa memaksakan semua komponen tampil sekaligus.
 
 ## Hasil Tampilan Aplikasi
 
-Berikut merupakan dokumentasi tampilan aplikasi TabungKu pada dua ukuran layar berbeda.
-
-### 1. Tampilan Mobile (HP)
+### 1. Tampilan HP
 
 ![Tampilan TabungKu pada HP](docs/layar_ponsel.png)
-
-*Tampilan aplikasi pada layar HP yang menampilkan ringkasan tabungan, kategori aktivitas, dan tiga transaksi terakhir.*
 
 ### 2. Tampilan Tablet
 
 ![Tampilan TabungKu pada Tablet](docs/layar_tablet.png)
 
-*Tampilan aplikasi pada layar tablet dengan ukuran konten yang disesuaikan agar tetap rapi dan mudah dibaca.*
+## Teknologi yang Digunakan
+
+- Flutter
+- Bahasa pemrograman Dart
+- Android Studio
+- Material Design
+
+Aplikasi menggunakan data statis dan tidak memerlukan database maupun package tambahan.
 
 ## Cara Menjalankan Aplikasi
 
-1. Pastikan Flutter SDK, Dart, dan Android Studio sudah terpasang.
-2. Clone repositori GitHub atau unduh proyek.
-3. Buka folder `tabungku_layout` menggunakan Android Studio.
-4. Jalankan Android Emulator atau hubungkan perangkat Android.
-5. Buka terminal pada folder utama proyek.
-6. Jalankan perintah berikut:
+1. Pastikan Flutter SDK dan Android Studio sudah terpasang.
+2. Buka folder proyek `tabungku_layout` menggunakan Android Studio atau terminal.
+3. Jalankan perintah berikut untuk mengambil dependensi:
 
-```bash
-flutter pub get
-flutter run
-```
+   ```bash
+   flutter pub get
+   ```
 
-Untuk memeriksa kode aplikasi, jalankan:
+4. Jalankan emulator Android atau hubungkan perangkat.
+5. Jalankan aplikasi dengan perintah:
 
-```bash
-flutter analyze
-```
+   ```bash
+   flutter run
+   ```
 
-Untuk menjalankan pengujian widget, gunakan:
-
-```bash
-flutter test
-```
+6. Aplikasi akan menampilkan halaman Ringkasan Tabungan.
 
 ## Struktur Proyek
 
 ```text
 tabungku_layout/
-├── android/
-├── ios/
 ├── lib/
 │   └── main.dart
-├── test/
 ├── docs/
 │   ├── layar_ponsel.png
 │   └── layar_tablet.png
+├── test/
 ├── pubspec.yaml
-├── pubspec.lock
-├── analysis_options.yaml
 └── README.md
 ```
 
 ## Kesimpulan
 
-Melalui Tugas Minggu 3 ini, saya mempraktikkan penggunaan widget dasar Flutter untuk membuat halaman Ringkasan Tabungan pada aplikasi TabungKu.
-
-Penggunaan `Card`, `Column`, `Row`, `Container`, `Padding`, dan `SizedBox` membantu menyusun tampilan menjadi lebih terstruktur dan rapi. Selain itu, penggunaan `ListView`, `Expanded`, dan `Flexible` membantu menyesuaikan tampilan pada ukuran layar yang berbeda.
-
-Data transaksi ditampilkan secara statis menggunakan fungsi `barisTransaksi()` yang disusun dengan widget `Row` dan `Column`, tanpa menggunakan database maupun package pihak ketiga.
-
-Aplikasi menggunakan perpaduan warna hijau sage dan pink pastel agar tampilan lebih menarik dan nyaman dilihat.
-
----
-
-**Tugas Individu – Pemrograman Mobile**
-
-Universitas Esa Unggul | Teknik Informatika | Semester 5
+Melalui pembuatan aplikasi TabungKu, saya dapat mempraktikkan penggunaan widget dasar Flutter seperti `Scaffold`, `Column`, `Row`, `Card`, `Container`, dan `ListView` untuk menyusun halaman ringkasan tabungan. Selain itu, saya juga mempelajari cara menyesuaikan tampilan pada HP dan tablet agar komponen tetap rapi, mudah dibaca, dan dapat diakses pada ukuran layar yang berbeda.

@@ -694,49 +694,33 @@ Screenshot diambil dari pengujian menggunakan Android Studio, Android Emulator P
 
 ### 14.1. Tampilan Status Server
 
-Halaman Status Server digunakan untuk menampilkan kondisi koneksi FastAPI dan database MySQL dari aplikasi Flutter.
+![Status Server](img/01-Status-Server.png)
 
-![Status Server](docs-tugas/img/01-Status-Server.png)
-
-*Gambar 1. Tampilan halaman monitoring Status Server pada TabungKu Cloud.*
+*Gambar 1. Tampilan halaman monitoring Status Server.*
 
 ### 14.2. Dokumentasi Swagger UI
 
-Swagger UI menyediakan dokumentasi interaktif endpoint FastAPI dan memungkinkan pengujian HTTP langsung melalui browser.
+![Swagger UI](img/02-Swagger-UI.png)
 
-![Swagger UI](docs-tugas/img/02-Swagger-UI.png)
-
-*Gambar 2. Dokumentasi endpoint FastAPI menggunakan Swagger UI.*
+*Gambar 2. Dokumentasi endpoint FastAPI melalui Swagger UI.*
 
 ### 14.3. Status Server Disconnected
 
-Pengujian dilakukan dengan menghentikan layanan melalui Docker Compose, kemudian melakukan pemeriksaan ulang dari aplikasi Flutter.
+![Status Server Disconnected](img/03-Status-Server-Disconnected.png)
 
-Aplikasi menampilkan status dan informasi gangguan koneksi sesuai kondisi layanan.
-
-![Status Server Disconnected](docs-tugas/img/03-Status-Server-Disconnected.png)
-
-*Gambar 3. Tampilan halaman Status Server ketika layanan mengalami gangguan.*
+*Gambar 3. Tampilan ketika server mengalami gangguan koneksi.*
 
 ### 14.4. Pengelolaan Database dengan Adminer
 
-Adminer digunakan untuk mengakses layanan MySQL melalui browser.
+![Adminer](img/04-Adminer.png)
 
-Alamat Adminer:
-
-`http://localhost:8081`
-
-![Adminer MySQL](docs-tugas/img/04-Adminer.png)
-
-*Gambar 4. Antarmuka Adminer untuk pengelolaan database MySQL.*
+*Gambar 4. Pengelolaan database MySQL melalui Adminer.*
 
 ### 14.5. Hasil Pengujian Swagger UI
 
-Endpoint `/health` digunakan untuk memeriksa koneksi backend dan database. Ketika sistem berjalan normal, endpoint memberikan respons HTTP 200.
+![Swagger UI Success](img/05-Swagger-UI-Succes.png)
 
-![Swagger UI Success](docs-tugas/img/05-Swagger-UI-Succes.png)
-
-*Gambar 5. Dokumentasi hasil pemeriksaan endpoint FastAPI menggunakan Swagger UI.*
+*Gambar 5. Hasil pengujian endpoint FastAPI menggunakan Swagger UI.*
 
 ### 14.6. Daftar Screenshot
 

@@ -696,7 +696,7 @@ Screenshot diambil dari pengujian menggunakan Android Studio, Android Emulator P
 
 Halaman Status Server digunakan untuk menampilkan kondisi koneksi FastAPI dan database MySQL dari aplikasi Flutter.
 
-![Status Server](docs-tugas/img/01.Status%20Server.png)
+![Status Server](docs-tugas/img/01-Status-Server.png)
 
 *Gambar 1. Tampilan halaman monitoring Status Server pada TabungKu Cloud.*
 
@@ -704,7 +704,7 @@ Halaman Status Server digunakan untuk menampilkan kondisi koneksi FastAPI dan da
 
 Swagger UI menyediakan dokumentasi interaktif endpoint FastAPI dan memungkinkan pengujian HTTP langsung melalui browser.
 
-![Swagger UI](docs-tugas/img/02.Swagger%20UI.png)
+![Swagger UI](docs-tugas/img/02-Swagger-UI.png)
 
 *Gambar 2. Dokumentasi endpoint FastAPI menggunakan Swagger UI.*
 
@@ -714,7 +714,7 @@ Pengujian dilakukan dengan menghentikan layanan melalui Docker Compose, kemudian
 
 Aplikasi menampilkan status dan informasi gangguan koneksi sesuai kondisi layanan.
 
-![Status Server Disconnected](docs-tugas/img/03.Status%20Server%20Disconnected.png)
+![Status Server Disconnected](docs-tugas/img/03-Status-Server-Disconnected.png)
 
 *Gambar 3. Tampilan halaman Status Server ketika layanan mengalami gangguan.*
 
@@ -726,7 +726,7 @@ Alamat Adminer:
 
 `http://localhost:8081`
 
-![Adminer MySQL](docs-tugas/img/04.Adminer.png)
+![Adminer MySQL](docs-tugas/img/04-Adminer.png)
 
 *Gambar 4. Antarmuka Adminer untuk pengelolaan database MySQL.*
 
@@ -734,7 +734,7 @@ Alamat Adminer:
 
 Endpoint `/health` digunakan untuk memeriksa koneksi backend dan database. Ketika sistem berjalan normal, endpoint memberikan respons HTTP 200.
 
-![Swagger UI Success](docs-tugas/img/05.Swagger%20UI%20Succes.png)
+![Swagger UI Success](docs-tugas/img/05-Swagger-UI-Succes.png)
 
 *Gambar 5. Dokumentasi hasil pemeriksaan endpoint FastAPI menggunakan Swagger UI.*
 

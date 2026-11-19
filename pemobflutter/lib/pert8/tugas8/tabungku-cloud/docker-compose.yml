@@ -1,0 +1,44 @@
+services:
+  db:
+    image: mysql:8.4
+    container_name: tabungku-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_tabungku
+      MYSQL_DATABASE: tabungku
+      MYSQL_USER: tabungku
+      MYSQL_PASSWORD: rahasia_tabungku
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot_tabungku"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    container_name: tabungku-api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: mysql+pymysql://tabungku:rahasia_tabungku@db:3306/tabungku
+    ports:
+      - "9000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+
+  adminer:
+    image: adminer:5
+    container_name: tabungku-adminer
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    depends_on:
+      - db
+
+volumes:
+  mysql_data:
